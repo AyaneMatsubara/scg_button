@@ -1,8 +1,8 @@
 <template>
-  <a href="#" class="blue" v-bind:style="{ height: height+'px', width: width+'px', borderRadius: border_radius(height)+'px' }">
-    <span class="blue-text" v-bind:style="{ lineHeight: height+'px' }">{{ msg }}</span>
+  <a href="#" class="blue" v-bind:style="{ height: inner_size(height)+'px', width: inner_size(width)+'px', borderRadius: border_radius(inner_size(height))+'px' }">
+    <span class="blue-text" v-bind:style="{ lineHeight: inner_size(height)+'px' }">{{ msg }}</span>
     <span class="blue-highlight"></span>
-    <div class="blue-frame" v-bind:style="{ height: frame_size(height)+'px', width: frame_size(width)+'px', borderRadius: border_radius(frame_size(height))+'px' }"></div>
+    <div class="blue-frame" v-bind:style="{ height: height+'px', width: width+'px', borderRadius: border_radius(height)+'px' }"></div>
   </a>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     border_radius(height) { return height / 2 },
-    frame_size(size) { return size + 20 }
+    inner_size(size) { return size - 20 }
   }
 }
 </script>
@@ -27,6 +27,7 @@ export default {
 .blue {
   display: inline-block;
   position: relative;
+  margin: 10px;
   border: 1px solid rgba(0,0,0,0.5);
   background: radial-gradient(circle at bottom, #00D1F2 20%, #0055C1 85%);
   box-shadow: 0 2px 6px rgba(0,0,0,0.5), 0 2px 10px rgba(0,100,255, 0.7), 0 2px 6px rgba(0,0,0,0.5), 0 2px 10px rgba(0,100,255, 0.7), inset 0 0 10px rgba(0,0,150,0.6);

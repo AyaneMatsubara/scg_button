@@ -7,10 +7,8 @@
     <red-button/>
     <br>
     <br>
-    <blue-button v-bind:height="50" v-bind:width="250" v-bind:text="'START'" class="margin"/>
-    <br>
-    <br>
-    <blue-button v-bind:height="40" v-bind:width="150" v-bind:text="'hello'"/>
+    <blue-button v-bind:height="70" v-bind:width="270" v-bind:text="'START'"/>
+    <blue-button v-bind:height="50" v-bind:width="150" v-bind:text="'hello'"/>
   </div>
 </template>
 
@@ -32,9 +30,6 @@ export default {
 </script>
 
 <style>
-.margin {
-  margin: 50px;
-}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
