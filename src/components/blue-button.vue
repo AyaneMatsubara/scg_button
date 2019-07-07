@@ -1,22 +1,19 @@
 <template>
-  <a href="#" class="blue" v-bind:style="{ height: inner_size(height)+'px', width: inner_size(width)+'px', borderRadius: border_radius(inner_size(height))+'px' }">
-    <span class="blue-text" v-bind:style="{ lineHeight: inner_size(height)+'px' }">{{ msg }}</span>
-    <span class="blue-highlight"></span>
-    <div class="blue-frame" v-bind:style="{ height: height+'px', width: width+'px', borderRadius: border_radius(height)+'px' }"></div>
-  </a>
+  <div>
+    <a href="#" class="blue" v-bind:style="{ height: inner_size(height)+'px', width: inner_size(width)+'px', borderRadius: border_radius(inner_size(height))+'px' }">
+      <span class="blue-text" v-bind:style="{ lineHeight: inner_size(height)+'px' }">{{ msg }}</span>
+      <span class="blue-highlight"></span>
+      <div class="blue-frame" v-bind:style="{ height: height+'px', width: width+'px', borderRadius: border_radius(height)+'px' }"></div>
+    </a>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'blue-button',
-  props: [ 'height', 'width', 'text' ],
-  data () {
-    return {
-      msg: this.text,
-    }
-  },
+  props: ['msg', 'height', 'width'],
   methods: {
-    border_radius(height) { return height / 2 },
+    border_radius(size) { return size / 2 },
     inner_size(size) { return size - 20 }
   }
 }
